@@ -30,7 +30,7 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
     pesan += 'Nomor Order: ${orderId}';
   
     const nomorAdmin = "6285763138450"; // ganti dengan nomor WhatsApp Admin (format internasional)
-    const link = 'https://wa.me/${nomorAdmin}?text=${pesan}';
+    const link = 'https://wa.me/6285763138450?text=${pesan}';
     document.getElementById("linkWA").href = link;
   
     document.getElementById("orderForm").style.display = "none";
