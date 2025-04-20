@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jcostody - Form Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Form Titip Barang - JCuztody</h1>
+    <form id="orderForm">
+      <label>Nama Pelanggan</label>
+      <input type="text" id="nama" required>
+
+      <label>Nomor WhatsApp</label>
+      <input type="tel" id="wa" required>
+
+      <label>Ukuran Barang (cm)</label>
+      <div class="row">
+        <input type="number" id="tinggi" placeholder="Tinggi" required>
+        <input type="number" id="panjang" placeholder="Panjang" required>
+        <input type="number" id="lebar" placeholder="Lebar" required>
+      </div>
+
+      <label>Durasi Penitipan</label>
+      <div class="row">
+        <select id="durasiTipe" required>
+          <option value="hari">Hari</option>
+          <option value="bulan">Bulan</option>
+          <option value="tahun">Tahun</option>
+        </select>
+        <input type="number" id="durasi" placeholder="Jumlah" required>
+      </div>
+
+      <label>Berat Barang (kg)</label>
+      <input type="number" id="berat" required>
+
+      <label>Opsi Pengiriman</label>
+      <select id="pengiriman" required onchange="toggleAlamat()">
+        <option value="antar">Antar Sendiri</option>
+        <option value="jemput">Jemput Barang</option>
+      </select>
+
+      <div id="alamatField" style="display: none;">
+        <label>Alamat Penjemputan</label>
+        <textarea id="alamat"></textarea>
+      </div>
+
+      <button type="submit">Kirim Order</button>
+    </form>
+
+    <div id="nomorOrder" style="display: none;">
+      <p>Order kamu berhasil dikirim!</p>
+      <p>Nomor Order: <strong id="kodeOrder"></strong></p>
+      <a id="linkWA" href="#" target="_blank">Hubungi Admin via WhatsApp</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
